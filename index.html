@@ -1,0 +1,73 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Idea Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 Business Idea Generator</h1>
+        
+        <!-- API Key Input -->
+        <div class="api-key-section">
+            <input type="password" id="apiKey" placeholder="Enter Perplexity API Key" class="form-input">
+        </div>
+
+        <!-- Main Form -->
+        <div class="form-grid">
+            <div class="form-group">
+                <label for="budget">💰 Investment Budget</label>
+                <select id="budget" class="form-input">
+                    <option value="Under $1,000">Under $1,000</option>
+                    <option value="$1,000-$5,000">$1,000-$5,000</option>
+                    <option value="$5,000-$10,000">$5,000-$10,000</option>
+                    <option value="$10,000-$50,000">$10,000-$50,000</option>
+                    <option value="Over $50,000">Over $50,000</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="skills">🎯 Your Skills/Experience</label>
+                <textarea id="skills" placeholder="E.g., programming, marketing, teaching..." class="form-input"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="interests">💫 Your Interests</label>
+                <textarea id="interests" placeholder="E.g., technology, health, arts..." class="form-input"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="location">📍 Location</label>
+                <input type="text" id="location" placeholder="City, Country" class="form-input">
+            </div>
+        </div>
+
+        <!-- Generate Button -->
+        <button onclick="generateIdeas()" class="generate-btn">Generate Ideas 🎯</button>
+
+        <!-- Results Section -->
+        <div id="results" class="results-section hidden">
+            <h2>Your Business Ideas</h2>
+            <div id="ideasContent"></div>
+            
+            <!-- Download & Email Buttons -->
+            <div class="action-buttons">
+                <button onclick="downloadPDF()" class="action-btn">Download PDF 📥</button>
+                <button onclick="showEmailForm()" class="action-btn">Send via Email 📧</button>
+            </div>
+        </div>
+
+        <!-- Loading Spinner -->
+        <div id="loading" class="loading hidden">
+            <div class="spinner"></div>
+            <p>Generating innovative business ideas...</p>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
